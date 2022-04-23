@@ -1,4 +1,5 @@
 ﻿using System;
+using ReferenceSharing.Variables;
 using UnityEngine;
 
 namespace ReferenceSharing

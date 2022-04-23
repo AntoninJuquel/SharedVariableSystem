@@ -1,6 +1,6 @@
 using UnityEngine;
 
-namespace ReferenceSharing
+namespace ReferenceSharing.Variables
 {
     public class Variable<T> : ScriptableObject
     {
