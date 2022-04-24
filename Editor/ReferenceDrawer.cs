@@ -1,7 +1,7 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
-namespace ReferenceSharing
+namespace ReferenceSharing.Editor
 {
     [CustomPropertyDrawer(typeof(Reference<>))]
     public class ReferenceDrawer : PropertyDrawer
