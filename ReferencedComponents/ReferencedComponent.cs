@@ -8,12 +8,12 @@ namespace ReferenceSharing.ReferencedComponents
 
         private void OnEnable()
         {
-            valueRef.SubscribeOnValueChanged(OnValueChanged);
+            valueRef.AddEventListener(OnValueChanged);
         }
 
         private void OnDisable()
         {
-            valueRef.UnsubscribeOnValueChanged(OnValueChanged);
+            valueRef.RemoveEventListener(OnValueChanged);
         }
 
         protected abstract void OnValueChanged(object sender, T value);

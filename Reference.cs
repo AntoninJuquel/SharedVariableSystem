@@ -23,12 +23,12 @@ namespace ReferenceSharing
             }
         }
 
-        public void SubscribeOnValueChanged(System.EventHandler<T> callback)
+        public void AddEventListener(System.EventHandler<T> callback)
         {
             Variable.OnValueChanged += callback;
         }
         
-        public void UnsubscribeOnValueChanged(System.EventHandler<T> callback)
+        public void RemoveEventListener(System.EventHandler<T> callback)
         {
             Variable.OnValueChanged -= callback;
         }
