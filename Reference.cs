@@ -13,14 +13,24 @@ namespace ReferenceSharing
 
         public T Value
         {
-            get { return useConstant ? constantValue : Variable.value;}
+            get { return useConstant ? constantValue : Variable.Value;}
             set
             {
                 if (useConstant)
                     constantValue = value;
                 else
-                    Variable.value = value;
+                    Variable.Value = value;
             }
+        }
+
+        public void SubscribeOnValueChanged(System.EventHandler<T> callback)
+        {
+            Variable.OnValueChanged += callback;
+        }
+        
+        public void UnsubscribeOnValueChanged(System.EventHandler<T> callback)
+        {
+            Variable.OnValueChanged -= callback;
         }
         
         public static implicit operator T(Reference<T> reference)
