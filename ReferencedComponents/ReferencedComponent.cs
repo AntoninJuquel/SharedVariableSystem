@@ -9,6 +9,7 @@ namespace ReferenceSharing.ReferencedComponents
         private void OnEnable()
         {
             valueRef.AddEventListener(OnValueChanged);
+            OnValueChanged(this, valueRef.Value);
         }
 
         private void OnDisable()

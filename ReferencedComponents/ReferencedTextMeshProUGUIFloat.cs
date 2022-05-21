@@ -1,10 +1,9 @@
-﻿using System;
-using TMPro;
+﻿using TMPro;
 using UnityEngine;
 
 namespace ReferenceSharing.ReferencedComponents
 {
-    public class ReferencedTextMeshProUGUI : ReferencedComponent<float>
+    public class ReferencedTextMeshProUGUIFloat : ReferencedComponent<float>
     {
         [SerializeField] private string format, prefix, suffix;
         private TextMeshProUGUI _text;

@@ -13,7 +13,7 @@ namespace ReferenceSharing
 
         public T Value
         {
-            get { return useConstant ? constantValue : Variable.Value;}
+            get { return (!Variable || useConstant) ? constantValue : Variable.Value;}
             set
             {
                 if (useConstant)
@@ -25,11 +25,13 @@ namespace ReferenceSharing
 
         public void AddEventListener(System.EventHandler<T> callback)
         {
+            if (!Variable || useConstant) return;
             Variable.OnValueChanged += callback;
         }
         
         public void RemoveEventListener(System.EventHandler<T> callback)
         {
+            if (!Variable || useConstant) return;
             Variable.OnValueChanged -= callback;
         }
         
