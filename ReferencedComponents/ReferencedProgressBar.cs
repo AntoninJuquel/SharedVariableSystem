@@ -13,7 +13,7 @@ namespace ReferenceSharing.ReferencedComponents
             _fill = GetComponent<Image>();
         }
 
-        protected override void OnValueChanged(object sender, float value)
+        protected override void OnValueChanged(float value)
         {
             _fill.fillAmount = valueRef.Value / maxFloatValueRef.Value;
         }

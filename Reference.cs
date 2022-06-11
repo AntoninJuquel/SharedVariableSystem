@@ -23,13 +23,13 @@ namespace ReferenceSharing
             }
         }
 
-        public void AddEventListener(System.EventHandler<T> callback)
+        public void AddEventListener(Action<T> callback)
         {
             if (!Variable || useConstant) return;
             Variable.OnValueChanged += callback;
         }
         
-        public void RemoveEventListener(System.EventHandler<T> callback)
+        public void RemoveEventListener(Action<T> callback)
         {
             if (!Variable || useConstant) return;
             Variable.OnValueChanged -= callback;

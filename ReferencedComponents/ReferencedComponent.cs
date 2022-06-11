@@ -9,7 +9,7 @@ namespace ReferenceSharing.ReferencedComponents
         private void OnEnable()
         {
             valueRef.AddEventListener(OnValueChanged);
-            OnValueChanged(this, valueRef.Value);
+            OnValueChanged(valueRef.Value);
         }
 
         private void OnDisable()
@@ -17,6 +17,6 @@ namespace ReferenceSharing.ReferencedComponents
             valueRef.RemoveEventListener(OnValueChanged);
         }
 
-        protected abstract void OnValueChanged(object sender, T value);
+        protected abstract void OnValueChanged(T value);
     }
 }

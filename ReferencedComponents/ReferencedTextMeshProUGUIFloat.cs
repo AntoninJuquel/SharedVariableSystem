@@ -13,7 +13,7 @@ namespace ReferenceSharing.ReferencedComponents
             _text = GetComponent<TextMeshProUGUI>();
         }
 
-        protected override void OnValueChanged(object sender, float value)
+        protected override void OnValueChanged(float value)
         {
             _text.text = $"{prefix}{value.ToString(format)}{suffix}";
         }
