@@ -5,7 +5,7 @@ namespace ReferenceSharing.Variables
 {
     public class Variable<T> : ScriptableObject
     {
-        private T _value;
+        [SerializeField] private T _value;
         public event Action<T> OnValueChanged;
 
         public T Value
