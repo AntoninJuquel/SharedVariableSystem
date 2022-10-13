@@ -16,6 +16,7 @@ namespace ReferenceSharing.ReferencedComponents
 
         protected override void OnValueChanged(double value)
         {
+            if (maxDoubleValueRef.Value == 0) return;
             _fill.fillAmount = (float)(valueRef.Value / maxDoubleValueRef.Value);
             _fill.color = gradient.Evaluate(_fill.fillAmount);
         }
