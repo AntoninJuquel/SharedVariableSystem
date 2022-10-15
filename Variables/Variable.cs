@@ -19,5 +19,10 @@ namespace ReferenceSharing.Variables
         }
 
         public void SetValue(T value) => Value = value;
+
+        private void OnValidate()
+        {
+            SetValue(_value);
+        }
     }
 }
