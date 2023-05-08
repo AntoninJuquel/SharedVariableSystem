@@ -1,28 +1,21 @@
 using System;
 using UnityEngine;
 
-namespace ReferenceSharing.Variables
+namespace ReferenceSharing
 {
     public class Variable<T> : ScriptableObject
     {
-        [SerializeField] private T _value;
+        [SerializeField] private T value;
         public event Action<T> OnValueChanged;
 
         public T Value
         {
-            get => _value;
+            get => value;
             set
             {
-                _value = value;
+                this.value = value;
                 OnValueChanged?.Invoke(value);
             }
-        }
-
-        public void SetValue(T value) => Value = value;
-
-        private void OnValidate()
-        {
-            SetValue(_value);
         }
     }
 }
