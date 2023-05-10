@@ -8,6 +8,7 @@ namespace ReferenceSharing
         [SerializeField] private Variable<T> variable;
         [SerializeField] private bool refreshOnEnable = true;
         [SerializeField] private UnityEvent<T> onValueChanged;
+        [SerializeField] private UnityEvent<T> onGetValueTriggered;
 
         private void OnEnable()
         {
@@ -27,6 +28,11 @@ namespace ReferenceSharing
         private void RaiseEvent(T value)
         {
             onValueChanged?.Invoke(value);
+        }
+        
+        public void GetValue()
+        {
+            onGetValueTriggered?.Invoke(variable.Value);
         }
     }
 }
