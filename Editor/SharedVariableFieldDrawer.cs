@@ -1,10 +1,10 @@
 ﻿using UnityEditor;
 using UnityEngine;
 
-namespace ReferenceSharing.Editor
+namespace SharedVariableSystem.Editor
 {
-    [CustomPropertyDrawer(typeof(Reference<>))]
-    public class ReferenceDrawer : PropertyDrawer
+    [CustomPropertyDrawer(typeof(SharedVariableField<>))]
+    public class SharedVariableFieldDrawer : PropertyDrawer
     {
         /// <summary>
         /// Options to display in the popup to select constant or variable.
@@ -31,7 +31,7 @@ namespace ReferenceSharing.Editor
             // Get properties
             SerializedProperty useConstant = property.FindPropertyRelative("useConstant");
             SerializedProperty constantValue = property.FindPropertyRelative("constantValue");
-            SerializedProperty variable = property.FindPropertyRelative("Variable");
+            SerializedProperty sharedVariable = property.FindPropertyRelative("sharedVariable");
 
             // Calculate rect for configuration button
             Rect buttonRect = new Rect(position);
@@ -48,7 +48,7 @@ namespace ReferenceSharing.Editor
             useConstant.boolValue = result == 0;
 
             EditorGUI.PropertyField(position,
-                useConstant.boolValue ? constantValue : variable,
+                useConstant.boolValue ? constantValue : sharedVariable,
                 GUIContent.none);
 
             if (EditorGUI.EndChangeCheck())

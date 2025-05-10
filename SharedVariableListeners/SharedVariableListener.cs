@@ -1,11 +1,11 @@
 using UnityEngine;
 using UnityEngine.Events;
 
-namespace ReferenceSharing
+namespace SharedVariableSystem
 {
-    public class Receiver<T> : MonoBehaviour
+    public class SharedVariableListener<T> : MonoBehaviour
     {
-        [SerializeField] private Variable<T> variable;
+        [SerializeField] private SharedVariable<T> variable;
         [SerializeField] private bool refreshOnEnable = true;
         [SerializeField] private UnityEvent<T> onValueChanged;
         [SerializeField] private UnityEvent<T> onGetValueTriggered;

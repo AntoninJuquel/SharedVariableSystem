@@ -1,9 +1,9 @@
 using System;
 using UnityEngine;
 
-namespace ReferenceSharing
+namespace SharedVariableSystem
 {
-    public class Variable<T> : ScriptableObject
+    public class SharedVariable<T> : ScriptableObject
     {
         [SerializeField] private T value;
         public event Action<T> OnValueChanged;
